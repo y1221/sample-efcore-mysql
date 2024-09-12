@@ -1,0 +1,4 @@
+.vs
+MySQLSample/bin
+MySQLSample/obj
+MySQLSample/*.user
