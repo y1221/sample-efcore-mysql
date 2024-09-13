@@ -1,7 +1,12 @@
+using Microsoft.EntityFrameworkCore;
+using MySQLSample.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+builder.Services.AddDbContext<MySQLSampleContext>(options => 
+    options.UseMySql(builder.Configuration.GetConnectionString("MySQLSampleContext"), new MySqlServerVersion(new Version(8, 4, 2))));
 
 var app = builder.Build();
 
