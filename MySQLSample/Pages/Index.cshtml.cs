@@ -12,6 +12,7 @@ namespace MySQLSample.Pages
         private readonly MySQLSampleContext _context;
 
         public IList<User> Users { get; set; } = default!;
+        public IList<Item> Items { get; set; } = default!;
 
         public IndexModel(ILogger<IndexModel> logger, MySQLSampleContext context)
         {
@@ -22,6 +23,7 @@ namespace MySQLSample.Pages
         public async Task OnGetAsync()
         {
             Users = await _context.User.ToListAsync();
+            Items = await _context.Item.ToListAsync();
         }
     }
 }

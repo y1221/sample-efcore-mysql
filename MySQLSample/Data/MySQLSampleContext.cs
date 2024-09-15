@@ -7,5 +7,6 @@ namespace MySQLSample.Data
         public MySQLSampleContext (DbContextOptions<MySQLSampleContext> options) : base(options) { }
 
         public DbSet<MySQLSample.Models.User> User { get; set; } = default!;
+        public DbSet<MySQLSample.Models.Item> Item { get; set; } = default!;
     }
 }
